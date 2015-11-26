@@ -1,16 +1,33 @@
 {
-  "name": "art-gallery",
+  "name": "upload-file",
   "version": "1.0.0",
-  "description": "This is a front end for displaying one's art",
+  "description": "this is upload tool for admin purposes",
   "main": "index.html",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "bootstrap": "^3.3.6",
+    "cors": "^2.7.1",
+    "mongoose": "^4.2.8"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maddy2308/UploadFile.git"
+  },
   "keywords": [
-    "AngularJS",
+    "Angular",
     "Bootstrap",
-    "Mongo"
+    "mongoose",
+    "node",
+    "express"
   ],
-  "author": "Madhur, Divyanshi",
-  "license": "ISC"
+  "author": "Madhur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maddy2308/UploadFile/issues"
+  },
+  "homepage": "https://github.com/maddy2308/UploadFile#readme"
 }
