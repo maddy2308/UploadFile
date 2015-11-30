@@ -1,0 +1,26 @@
+<div>
+    <ul>
+        <li ng-repeat="art in listCtrl.arts">
+            <!--{{art.artName}} - {{art.artistName}}-->
+            <!--<div ng-repeat="image in art.uploadedImages">-->
+                <!--<img data-ng-src="data:image/jpeg;base64,{{image.imageData}}"-->
+                     <!--style="width: 100px; height: 100px">-->
+            <!--</div>-->
+
+            <div>
+                <carousel interval="10000" no-wrap="noWrapSlides">
+                    <slide ng-repeat="image in art.uploadedImages" active="slide.active">
+                        <img data-ng-src="data:image/jpeg;base64,{{image.imageData}}"
+                            style="width: 300px; height: 300px; margin:auto;">
+                           <div class="carousel-caption">
+                               <h4>Slide {{$index}}</h4>
+                               <p>{{art.artName}} - {{art.artistName}}</p>
+                           </div>
+                       </slide>
+                   </carousel>
+               </div>
+           </li>
+       </ul>
+   </div>
+
+

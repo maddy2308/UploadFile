@@ -1,0 +1,63 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Upload Your Art</h3>
+    </div>
+    <div class="panel-body">
+        <!-- ng-controller="FileUploadController as uploadCtrl"  -->
+        <md-content layout-padding>
+            <form id="fileUploadForm" layout="column" name="uploadForm" ng-cloak layout-padding>
+
+                <div layout="row" layout-sm="column" layout-padding>
+                    <md-input-container flex="50">
+                        <label>Art Name</label>
+                        <input ng-model="uploadCtrl.form.artName" type="text">
+                    </md-input-container>
+                    <md-input-container flex="50">
+                        <label>Artist Name</label>
+                        <input ng-model="uploadCtrl.form.artistName" type="text">
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-sm="column" layout-padding>
+                    <md-input-container flex="50">
+                        <Label>Art Images</Label>
+                        <input type="file" name="uploadedData" ng-model="restaurantCtrl.form.uploadedImages"
+                               accept="image/*" multiple>
+                    </md-input-container>
+
+                    <md-input-container flex="50">
+                        <label>Art Description</label>
+                        <input ng-model="uploadCtrl.form.description" type="text">
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-sm="column" layout-padding>
+                    <md-input-container flex="33">
+                        <label>Art Type</label>
+                        <md-select ng-model="uploadCtrl.form.artType">
+                            <md-option ng-repeat="type in uploadCtrl.artType" value="{{type}}">
+                                {{type}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+
+                    <md-datepicker flex="33" ng-model="uploadCtrl.form.creationDate"
+                                   md-placeholder="Creation Date"></md-datepicker>
+                    <md-datepicker flex="33" ng-model="uploadCtrl.form.availableDateOfPurchase"
+                                   md-placeholder="Available From"></md-datepicker>
+                </div>
+            </form>
+        </md-content>
+    </div>
+
+    <div class="panel-footer clearfix">
+        <div class="pull-right">
+            <md-button class="md-icon-button md-primary md-raised" aria-label="Settings"
+            ng-click="uploadCtrl.uploadArt()">
+            <md-icon md-svg-src="img/icons/ic_done_white_24px.svg" class="name"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button md-danger md-raised" aria-label="Settings" ng-click="uploadCtrl.cancel()">
+            <md-icon md-svg-src="img/icons/ic_clear_black_24px.svg" class="name"></md-icon>
+            </md-button>
+        </div>
+    </div>
+</div>
