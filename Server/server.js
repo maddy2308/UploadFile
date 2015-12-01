@@ -19,6 +19,7 @@ var artModel = mongoose.model('ArtInformation', externalArtUploadJs.ArtUploadSch
 app.use(multer({dest: './uploads/'}).array('uploadedData'));
 
 /*Run the server.*/
+var ipAddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 app.listen(3000);
 
 app.post('/Art/upload', function (req, res) {

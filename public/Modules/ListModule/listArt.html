@@ -1,26 +1,50 @@
-<div>
-    <ul>
-        <li ng-repeat="art in listCtrl.arts">
-            <!--{{art.artName}} - {{art.artistName}}-->
-            <!--<div ng-repeat="image in art.uploadedImages">-->
-                <!--<img data-ng-src="data:image/jpeg;base64,{{image.imageData}}"-->
-                     <!--style="width: 100px; height: 100px">-->
-            <!--</div>-->
+<!--<div>-->
+<!--<ul>-->
+<!--<li ng-repeat="art in listCtrl.arts">-->
+<!--<carousel interval="10000" no-wrap="noWrapSlides">-->
+<!--<slide ng-repeat="image in art.uploadedImages" active="slide.active">-->
+<!--<img data-ng-src="data:image/jpeg;base64,{{image.imageData}}"-->
+<!--style="width: 300px; height: 300px; margin:auto;">-->
 
-            <div>
-                <carousel interval="10000" no-wrap="noWrapSlides">
-                    <slide ng-repeat="image in art.uploadedImages" active="slide.active">
-                        <img data-ng-src="data:image/jpeg;base64,{{image.imageData}}"
-                            style="width: 300px; height: 300px; margin:auto;">
-                           <div class="carousel-caption">
-                               <h4>Slide {{$index}}</h4>
-                               <p>{{art.artName}} - {{art.artistName}}</p>
-                           </div>
-                       </slide>
-                   </carousel>
-               </div>
-           </li>
-       </ul>
-   </div>
+<!--<div class="carousel-caption">-->
+<!--<h4>Slide {{$index}}</h4>-->
+
+<!--<p>{{art.artName}} - {{art.artistName}}</p>-->
+<!--</div>-->
+<!--</slide>-->
+<!--</carousel>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
 
 
+<md-content class="md-padding" layout="row" layout-wrap layout-align="center start">
+    <div flex="50" layout="column">
+        <md-card ng-repeat="art in listCtrl.arts">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{art.artName}}</span>
+                    <span class="md-subhead">{{art.artistName}}</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-lg">
+                        <carousel interval="10000" no-wrap="noWrapSlides">
+                            <slide ng-repeat="image in art.uploadedImages" active="slide.active">
+                                <img data-ng-src="data:image/jpeg;base64,{{image.imageData}}"
+                                     style="width: 300px; height: 300px; margin:auto;">
+
+                                <div class="carousel-caption">
+                                    <h4>Slide {{$index + 1}}</h4>
+                                </div>
+                            </slide>
+                        </carousel>
+                    </div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</md-content>
